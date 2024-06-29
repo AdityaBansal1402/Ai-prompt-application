@@ -18,7 +18,7 @@ const AI = () => {
 
     console.log(result.response.text());
   return (
-    <AiContext.Provider value={{prompt, setprompt}}>
+    <AiContext.Provider value={{prompt, setprompt, image, setimage}}>
       {props.children}
     </AiContext.Provider>
   )
