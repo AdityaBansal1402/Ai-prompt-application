@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className='sticky top-0 flex justify-between p-2 pl-5 pr-5 bg-zinc-950 bg-opacity-70 backdrop-filter backdrop-blur-sm'>
       <div className='flex text-white'>
-      <span className="material-symbols-outlined">menu</span>
+      <span className="material-symbols-outlined pr-4">menu</span>
       <div> Spectiler</div>
       </div>
       <div className='text-white'>
