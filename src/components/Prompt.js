@@ -16,7 +16,7 @@ const Prompt = () => {
   };
 
   return (
-    <div className="absolute flex-grow bottom-0 w-full min-w-full p-5 bg-zinc-900 opacity-65 backdrop-filter backdrop-blur-sm">
+    <div className="absolute bottom-0 w-[85%] p-5 bg-zinc-900 opacity-65 backdrop-filter backdrop-blur-sm">
       <div className="sticky bottom-0 text-gray-800 w-[85%] ml-auto mr-auto max-h-full flex justify-center">
         <div className='w-[90%] flex justify-center bg-zinc-700 rounded-full items-center'>
           <span className="material-symbols-outlined text-white">attach_file</span>

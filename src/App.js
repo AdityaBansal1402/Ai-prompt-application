@@ -3,16 +3,19 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Home from './components/Home';
+import AI from './AI';
 
 function App() {
   return (
-    <div className='min-h-screen bg-zinc-900 text-white' >
-      <Navbar/>
-      <div className='flex'>
-        <Sidebar />
-        <Home/>
+    <AI>
+      <div className='min-h-screen bg-zinc-900 text-white' >
+        <Navbar/>
+        <div className='flex'>
+          <Sidebar />
+          <Home/>
+        </div>
       </div>
-    </div>
+    </AI>
   );
 }
 
