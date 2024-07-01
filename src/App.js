@@ -8,7 +8,7 @@ import AI from './AI';
 function App() {
   return (
     <AI>
-      <div className='min-h-screen bg-zinc-900 text-white' >
+      <div className='min-h-screen max-h-screen bg-zinc-900 text-white !overflow-y-hidden' >
         <Navbar/>
         <div className='flex'>
           <Sidebar />
