@@ -13,8 +13,8 @@ const Home = () => {
     if(resp) setresps([...resps,{mess:prompt, domain: 'ml-[40%]'}]);
   },[prompt])
   return (
-    <div className='min-h-full overflow-y-auto max-h-screen w-full'>
-      <div className='mb-[20%] mt-[2%]'>
+    <div className='min-h-full overflow-y-auto max-h-screen w-screen'>
+      <div className='mb-[20%] mt-[2%] w-full'>
         { 
           resps.map((res,index)=>{
             return(
