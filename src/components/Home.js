@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import Prompt from './Prompt';
 import AiContext from '../AIContext';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -9,14 +9,19 @@ const Home = () => {
   const context = useContext(AiContext);
   const { prompt, setprompt, image, setimage, resp } = context;
   const [resps, setresps] = useState([]);
+  const bottomRef = useRef(null);
 
   useEffect(() => {
-    if (resp) setresps((prevResps) => [...prevResps, { mess: resp, domain: 'mr-[40%]' }]);
+    if (resp) setresps((prevResps) => [...prevResps, { mess: resp, domain: 'mr-[40%] !bg-zinc-900' }]);
   }, [resp]);
 
   useEffect(() => {
     if (prompt) setresps((prevResps) => [...prevResps, { mess: prompt, domain: 'ml-[40%]' }]);
   }, [prompt]);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [resps]);
 
   const renderer = new marked.Renderer();
   renderer.code = (code, language) => {
@@ -54,6 +59,7 @@ const Home = () => {
             );
           })
         }
+        <div ref={bottomRef}></div>
       </div>
       <Prompt />
     </div>

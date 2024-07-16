@@ -4,26 +4,32 @@ import AiContext from '../AIContext';
 const Prompt = () => {
   const prompref = useRef();
   const Context = useContext(AiContext);
-  const {prompt, setprompt, image, setimage,resp}=Context;
-  const [pro,setpro]=useState();
-  const prompy=(e)=>{
-    setpro(e.target.value)
-  }
+  const { prompt, setprompt, image, setimage, resp } = Context;
+  const [pro, setpro] = useState('');
+  
+  const prompy = (e) => {
+    setpro(e.target.value);
+  };
 
-  const clicky=()=>{
+  const clicky = () => {
     setprompt(pro);
-    setpro("");
-  }
-
-  // useEffect(() => {
-  //   console.log(prompref.current);
-  // }, []);
+    setpro('');
+    const textarea = prompref.current;
+    textarea.style.height = `${Math.min(textarea.scrollHeight, 2*24)}px`;
+  };
 
   const handleInput = () => {
     const textarea = prompref.current;
     if (textarea) {
       textarea.style.height = 'auto';
       textarea.style.height = `${Math.min(textarea.scrollHeight, 10 * 24)}px`; // 24px is the approximate line height
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      clicky();
     }
   };
 
@@ -36,9 +42,10 @@ const Prompt = () => {
             ref={prompref}
             value={pro}
             onChange={prompy}
+            onInput={handleInput}
+            onKeyDown={handleKeyDown}
             rows="1"
             placeholder='Enter your prompt'
-            onInput={handleInput}
             onFocus={() =>
               prompref.current &&
               prompref.current.parentElement.parentElement.parentElement.classList.add("!opacity-100")
@@ -48,9 +55,11 @@ const Prompt = () => {
               prompref.current.parentElement.parentElement.parentElement.classList.remove("!opacity-100")
             }
             className="max-w-[90%] rounded-3xl text-white bg-zinc-700 w-[90%] block resize-none max-h-full outline-none focus:outline-none p-3 overflow-y-auto box-border"
-            ></textarea>
-            <button onClick={()=>clicky()}><span className="material-symbols-outlined text-zinc-400 hover:!text-white">arrow_circle_up</span></button>
-          </div>
+          ></textarea>
+          <button onClick={clicky}>
+            <span className="material-symbols-outlined text-zinc-400 hover:!text-white">arrow_circle_up</span>
+          </button>
+        </div>
       </div>
     </div>
   );
