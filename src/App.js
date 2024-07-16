@@ -7,15 +7,17 @@ import AI from './AI';
 
 function App() {
   return (
-    <AI>
-      <div className='min-h-screen max-h-screen bg-zinc-900 text-white !overflow-y-hidden' >
-        <Navbar/>
-        <div className='flex'>
-          {/* <Sidebar /> */}
-          <Home/>
+    <div className='scrollbar-thin scrollbar-track-customTrack scrollbar-thumb-customThumb'>
+      <AI>
+        <div className='min-h-screen max-h-screen bg-zinc-900 text-white !overflow-y-hidden' >
+          <Navbar/>
+          <div className='flex'>
+            {/* <Sidebar /> */}
+            <Home/>
+          </div>
         </div>
-      </div>
-    </AI>
+      </AI>
+    </div>
   );
 }
 
