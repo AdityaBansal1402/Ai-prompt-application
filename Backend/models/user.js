@@ -22,17 +22,6 @@ const userschema = new mongoose.Schema({
         type: String,
         default:""
     }
-    // ,
-    // subscribers:{
-    //     type:Number,
-    //     default:0
-    // },
-    // subcribedUsers:{
-    //     type:[String]
-    // },
-    // likedvids:{
-    //     type:[String]
-    // }
 },{timestamps:true})
-const User=mongoose.model('user',userschema,'hell1');
+const User=mongoose.model('user',userschema,'users');
 module.exports=User;
