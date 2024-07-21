@@ -6,8 +6,7 @@ import Home from './components/Home';
 import AI from './AI';
 import Info from './Contexts/Info/Info';
 import { BrowserRouter as Router, Routes, Route, Link, Outlet } from 'react-router-dom';
-import Login from './components/Login';
-
+import Login from './components/Login'
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
       <AI>
         <Router>
           <div className='scrollbar-thin scrollbar-track-customTrack scrollbar-thumb-customThumb'>
-            <div className='min-h-screen max-h-screen bg-zinc-900 text-white !overflow-y-hidden' >
+            <div className='min-h-screen max-h-screen bg-zinc-900 text-white overflow-y-hidden ' >
               <Navbar/>
               <div className='flex'>
                 {/* <Sidebar /> */}

@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
+    "browser-image-compression": "^2.0.2",
     "concurrently": "^8.2.2",
     "express-validator": "^7.1.0",
     "jsonwebtoken": "^9.0.2",

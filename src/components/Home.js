@@ -4,12 +4,21 @@ import AiContext from '../AIContext';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { marked } from 'marked';
+import { useNavigate } from 'react-router-dom';
+import InfoContext from '../Contexts/Info/InfoContext';
+
 
 const Home = () => {
+  const context1=useContext(InfoContext);
   const context = useContext(AiContext);
+  let history=useNavigate();
+  const {info}=context1
   const { prompt, setprompt, image, setimage, resp } = context;
   const [resps, setresps] = useState([]);
   const bottomRef = useRef(null);
+  useEffect(()=>{
+    (localStorage.getItem('token'))?history('/'):history('/login')
+  },[])
 
   useEffect(() => {
     if (resp) setresps((prevResps) => [...prevResps, { mess: resp, domain: 'mr-[40%] !bg-zinc-900' }]);
