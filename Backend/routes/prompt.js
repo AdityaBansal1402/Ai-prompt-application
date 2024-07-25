@@ -1,7 +1,26 @@
 const express=require('express');
 const router=express.Router();
 const User=require('../models/user');
+const { body, validationResult } = require('express-validator');
+const fetchuser = require('../middleware/fetchuser');
+const Prompt = require('../models/prompt');
+const Prompts = require('../models/prompts');
 
-router.post()
+
+router.post('/createprompt',fetchuser,async(req,res)=>{
+    try{
+        let success=false;
+        const user=await User.findById(req.user.id);
+        const prompts=new Prompts({
+            userid:req.user.id
+        })
+        const savedPrompts=await prompts.save();
+        success=true;
+        res.json({success,savedPrompts});
+    }catch(error){
+        success=false;
+        res.status(500).json({success, error: "Internal server error" });
+    }
+})
 
 module.exports = router;

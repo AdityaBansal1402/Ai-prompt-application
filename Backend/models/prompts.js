@@ -1,18 +1,26 @@
 const mongoose = require ('mongoose');
 
 const promptsschema = new mongoose.Schema({
-    user:{
+    userid:{
         type:mongoose.Schema.ObjectId,
         ref:'user'
     },
     title:{
         type:String,
-        required:true
+        default: "New Chat"
     },
-    description:{
-        type:String,
-        required:true
-    },
+    description:[
+        {
+            title:{
+                type:String,
+                required:true
+            },
+            des:{
+                type:String,
+                required:true
+            }
+        }
+    ],
     date: {
         type: Date,
         default: function() {
@@ -27,11 +35,7 @@ const promptsschema = new mongoose.Schema({
                 hour12: true
             });
         }
-    },
-    promp:{
-        type:mongoose.Schema.ObjectId,
-        ref:'prompt'
     }
 },{timestamps:true})
-const User=mongoose.model('prompts',promptsschema,'allprompts');
-module.exports=User;
+const Prompts=mongoose.model('prompts',promptsschema,'allprompts');
+module.exports=Prompts;
