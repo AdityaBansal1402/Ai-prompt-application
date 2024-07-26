@@ -9,18 +9,18 @@ const promptsschema = new mongoose.Schema({
         type:String,
         default: "New Chat"
     },
-    description:[
-        {
-            title:{
-                type:String,
-                required:true
-            },
-            des:{
-                type:String,
-                required:true
-            }
-        }
-    ],
+    // description:[
+    //     {
+    //         title:{
+    //             type:String,
+    //             required:true
+    //         },
+    //         des:{
+    //             type:String,
+    //             required:true
+    //         }
+    //     }
+    // ],
     date: {
         type: Date,
         default: function() {

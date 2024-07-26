@@ -23,4 +23,24 @@ router.post('/createprompt',fetchuser,async(req,res)=>{
     }
 })
 
+router.post('/prompting/:id',fetchuser,async(req,res)=>{
+    try{
+        let success=false;
+        const user=await User.findById(req.user.id);
+        const prompts=await Prompts.findById(req.params.id);
+        const prompt=new Prompt({
+            promptsid:req.params.id,
+            title:req.body.title,
+            description:req.body.description,
+            imgurl:req.body.imgurl
+        })
+        const savedPrompt=await prompt.save();
+        success=true;
+        res.json({success,savedPrompt});
+    }catch(error){
+        success=false;
+        res.status(500).json({success, error: "Internal server error" });
+    }
+})
+
 module.exports = router;
