@@ -1,12 +1,3 @@
-const express=require('express');
-const router=express.Router();
-const User=require('../models/user');
-const { body, validationResult } = require('express-validator');
-const fetchuser = require('../middleware/fetchuser');
-const Prompt = require('../models/prompt');
-const Prompts = require('../models/prompts');
-
-
 router.post('/createprompt',fetchuser,async(req,res)=>{
     try{
         let success=false;
@@ -37,6 +28,44 @@ router.post('/prompting/:id',fetchuser,async(req,res)=>{
         const savedPrompt=await prompt.save();
         success=true;
         res.json({success,savedPrompt});
+    }catch(error){
+        success=false;
+        res.status(500).json({success, error: "Internal server error" });
+    }
+})
+router.get('/allprompt/:id',fetchuser,async(req,res)=>{
+    try{
+        let success=false;
+        const user=await User.findById(req.user.id);
+        const prompts=await Prompts.findById(req.params.id);
+        const prompt=await Prompt.find({promptsid:req.params.id}).sort({date:-1});
+        success=true;
+        res.json({success,prompt});
+    }catch(error){
+        success=false;
+        res.status(500).json({success, error: "Internal server error" });
+    }
+})
+router.get('/allprompts',fetchuser,async(req,res)=>{
+    try{
+        let success=false;
+        const user=await User.findById(req.user.id);
+        const prompts=await Prompts.find({userid:req.user.id});
+        success=true;
+        res.json({success,prompts});
+    }catch(error){
+        success=false;
+        res.status(500).json({success, error: "Internal server error" });
+    }
+})
+router.delete('/deleteprompts/:id',fetchuser,async(req,res)=>{
+    try{
+        const user=await User.findById(req.user.id);
+        const prompts=await Prompts.findById(req.params.id);
+        const prompt=await Prompt.find({promptsid:req.params.id}).sort({date:-1});
+        
+        success=true;
+        res.json({success,prompts});
     }catch(error){
         success=false;
         res.status(500).json({success, error: "Internal server error" });
