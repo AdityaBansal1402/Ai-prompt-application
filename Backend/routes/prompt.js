@@ -1,3 +1,11 @@
+const express=require('express');
+const router=express.Router();
+const User=require('../models/user');
+const Prompts=require('../models/prompts');
+const Prompt=require('../models/prompt');
+const fetchuser = require('../middleware/fetchuser');
+
+
 router.post('/createprompt',fetchuser,async(req,res)=>{
     try{
         let success=false;
