@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# AI-Prompt Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello! Welcome to our AI-Prompt Application, a cutting-edge platform where we utilize AI APIs to create an interactive chat app. This application features a user-friendly login page and maintains chat/prompt logs for your convenience.
 
-## Available Scripts
+## Current Features
 
-In the project directory, you can run:
+- **AI-Powered Chat**: Engage in conversations powered by AI.
+- **Login Page**: Secure login to keep your chats private.
+- **Chat/Prompt Logs**: Access logs of your past conversations and prompts.
 
-### `npm start`
+## Future Aspects
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **File Upload with Prompts**: We're planning to add the ability to upload files along with your prompts for a more integrated experience.
+2. **Multiple AI APIs**: Future updates will support multiple AI APIs, providing a broader range of responses and capabilities.
+3. **Interface Showcase**: Stay tuned for a dedicated section where we’ll be showcasing our interface.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Current Interface
 
-### `npm test`
+Here’s a snapshot of the current working interface. It might not be the prettiest, but it’s functional:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://github.com/user-attachments/assets/27039761-f494-4cc2-865d-7bed379118d8)
 
-### `npm run build`
+![image](https://github.com/user-attachments/assets/850d801b-00b5-4238-b838-ecbbedbbb81f)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Stay tuned for more updates as we continue to improve and expand the functionality of our AI-Prompt Application!
