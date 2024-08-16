@@ -8,12 +8,13 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 
 const AI = (props) => {
-  const genAI = new GoogleGenerativeAI("AIzaSyBXQQMPbLsImJ3NSqKM-lCM63Oe1eQmkhc");
+  const genAI = new GoogleGenerativeAI("AIzaSyDktJiWpVJbEXbXSnLX4A9Ov_N4CC2bwso");
   // const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
   const [prompt,setprompt]=useState();
   const [image,setimage]=useState();
   const [resp,setresp]=useState();
+  
   
   // const image = {
   // inlineData: {
