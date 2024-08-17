@@ -40,6 +40,7 @@ const AI = (props) => {
      
     <AiContext.Provider value={{prompt, setprompt, image, setimage,resp}}>
       {props.children}
+      
     </AiContext.Provider>
   )
 }
